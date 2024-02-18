@@ -1,0 +1,17 @@
+allprojects {
+    apply plugin: 'java-library'
+    repositories {
+        mavenCentral()
+    }
+}
+
+group 'com.grond'
+version '0.1-SNAPSHOTSNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation 'junit:junit:4.13.1'
+}

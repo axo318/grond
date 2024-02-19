@@ -1,1 +1,9 @@
 rootProject.name = 'grond'
+include 'shared'
+include 'ms1'
+include 'catalog'
+include 'catalog:catalog-api'
+findProject(':catalog:catalog-api')?.name = 'catalog-api'
+include 'catalog:catalog-impl'
+findProject(':catalog:catalog-impl')?.name = 'catalog-impl'
+

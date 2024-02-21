@@ -1,5 +1,5 @@
 dependencies {
-    implementation project(':shared')
+    implementation project(':common')
     implementation project(':catalog:catalog-api')
 
     testImplementation platform('org.junit:junit-bom:5.9.1')

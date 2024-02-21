@@ -11,8 +11,10 @@ java {
 
 dependencies {
 	implementation project(':catalog:catalog-api')
+	implementation project(':common')
+
 	implementation 'org.springframework.boot:spring-boot-starter-web'
-	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
 
 tasks.named('test') {

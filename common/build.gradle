@@ -1,5 +1,4 @@
 dependencies {
-    implementation project(':common')
     implementation 'org.springframework:spring-web:6.1.3'
 }
 

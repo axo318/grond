@@ -1,0 +1,10 @@
+spring:
+  config:
+    import: file:${GROND_CONFIG_PATH}
+
+config:
+  catalog-service-url: ${services.catalog.domain}${services.catalog.base-path}
+
+server:
+  servlet:
+    context-path: /catalog-service/api

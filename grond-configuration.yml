@@ -1,0 +1,4 @@
+services:
+  catalog:
+    domain: http://localhost:8080
+    base-path: /catalog-service/api

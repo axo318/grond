@@ -1,4 +1,4 @@
-package com.grond.catalog.api.services;
+package com.grond.catalog.api.endpoints;
 
 import com.grond.catalog.api.objects.Pipeline;
 import com.grond.catalog.api.objects.PipelineCreateRequest;
@@ -12,8 +12,8 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-@RequestMapping(PipelineService.BASE_PATH)
-public interface PipelineService {
+@RequestMapping(PipelineEndpoints.BASE_PATH)
+public interface PipelineEndpoints {
     String BASE_PATH = "/v1/pipelines";
 
     String GET_PIPELINE_PATH = "/{pipelineId}";

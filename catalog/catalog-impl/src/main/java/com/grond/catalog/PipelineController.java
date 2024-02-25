@@ -1,9 +1,9 @@
 package com.grond.catalog;
 
+import com.grond.catalog.api.endpoints.PipelineEndpoints;
 import com.grond.catalog.api.objects.Pipeline;
 import com.grond.catalog.api.objects.PipelineCreateRequest;
 import com.grond.catalog.api.objects.PipelineUpdateRequest;
-import com.grond.catalog.api.services.PipelineService;
 import com.grond.common.dialog.Controller;
 import com.grond.common.exception.ErrorCode;
 import com.grond.common.exception.ServiceException;
@@ -11,7 +11,7 @@ import java.util.List;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class PipelineController extends Controller implements PipelineService {
+public class PipelineController extends Controller implements PipelineEndpoints {
     @Override
     public Pipeline getPipeline(String pipelineId) {
         if (pipelineId.equals("error")) {

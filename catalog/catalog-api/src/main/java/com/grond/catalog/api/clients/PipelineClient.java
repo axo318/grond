@@ -1,16 +1,16 @@
 package com.grond.catalog.api.clients;
 
+import com.grond.catalog.api.endpoints.PipelineEndpoints;
 import com.grond.catalog.api.objects.Pipeline;
 import com.grond.catalog.api.objects.PipelineCreateRequest;
 import com.grond.catalog.api.objects.PipelineUpdateRequest;
-import com.grond.catalog.api.services.PipelineService;
 import com.grond.common.dialog.Client;
 import com.grond.common.dialog.ClientConfig;
 import java.util.List;
 import org.springframework.core.ParameterizedTypeReference;
 
 
-public class PipelineClient extends Client implements PipelineService {
+public class PipelineClient extends Client implements PipelineEndpoints {
     public PipelineClient(ClientConfig config) {
         super(config);
     }

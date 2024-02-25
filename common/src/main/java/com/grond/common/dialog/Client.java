@@ -13,7 +13,6 @@ public abstract class Client {
     }
 
     public <T> T get(String endpoint, Class<T> responseType, Object... uriVariables) {
-
         return DialogExceptionHandler.safeWrap(
                 () -> getRestTemplate().getForObject(getUrl(endpoint), responseType, uriVariables));
     }

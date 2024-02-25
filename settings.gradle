@@ -1,5 +1,5 @@
 rootProject.name = 'grond'
-include 'common'
+include 'grond-core'
 include 'ms1'
 include 'catalog'
 include 'catalog:catalog-api'

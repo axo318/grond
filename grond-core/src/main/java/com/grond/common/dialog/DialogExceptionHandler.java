@@ -2,8 +2,11 @@ package com.grond.common.dialog;
 
 import com.grond.common.exception.ErrorCode;
 import com.grond.common.exception.ServiceException;
-import org.springframework.web.client.HttpServerErrorException;
 import java.util.concurrent.Callable;
+import org.springframework.http.converter.HttpMessageNotReadableException;
+import org.springframework.web.client.HttpClientErrorException;
+import org.springframework.web.client.HttpServerErrorException;
+import org.springframework.web.client.ResourceAccessException;
 
 public class DialogExceptionHandler {
 
@@ -21,20 +24,21 @@ public class DialogExceptionHandler {
     private static <T> T safeWrapCommon(Callable<T> callable) {
         try {
             return callable.call();
-        } catch (HttpServerErrorException e) {
-            throw chainExternalException(e);
+        } catch (HttpClientErrorException e) {
+            throw new ServiceException("Dialog operation failed", ErrorCode.INVALID_REQUEST, e);
+        } catch (HttpServerErrorException | ResourceAccessException e) {
+            throw new ServiceException("Dialog operation failed", ErrorCode.EXTERNAL, e);
         } catch (Exception e) {
-            throw toServiceException(e);
+            throw new ServiceException("Dialog operation failed", ErrorCode.INTERNAL, e);
         }
-    }
-
-    private static ServiceException chainExternalException(HttpServerErrorException e) {
-        ServiceException parsedException = e.getResponseBodyAs(ServiceException.class);
-        return new ServiceException("Dialog operation failed", ErrorCode.EXTERNAL, parsedException);
     }
 
     public static ServiceException toServiceException(RuntimeException e) {
         return new ServiceException(e.getMessage(), ErrorCode.INTERNAL, e);
+    }
+
+    public static ServiceException toServiceException(HttpMessageNotReadableException e) {
+        return new ServiceException(e.getMessage(), ErrorCode.INVALID_REQUEST, e);
     }
 
     public static ServiceException toServiceException(Exception e) {

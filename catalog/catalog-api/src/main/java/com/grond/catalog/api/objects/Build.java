@@ -1,13 +1,15 @@
 package com.grond.catalog.api.objects;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-
+import com.grond.common.validators.ValidJson;
+import java.util.Date;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
-import java.util.Date;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
 
 @Data
+@Builder
 @AllArgsConstructor
 public class Build {
     @Nonnull
@@ -19,5 +21,10 @@ public class Build {
     @Nullable
     private Date endTime;
     @Nonnull
-    private String status;
+    private BuildStatus status;
+    @Nonnull
+    @ValidJson
+    private String instructions;
+    @Nullable
+    private String repositoryUrl;
 }

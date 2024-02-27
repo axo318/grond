@@ -1,7 +1,7 @@
 package com.grond.catalog.api.objects;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.grond.common.validators.ValidJson;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import lombok.AllArgsConstructor;
@@ -16,12 +16,14 @@ import lombok.NoArgsConstructor;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class PipelineUpdateRequest {
     @Nonnull
-    @JsonProperty
     private String id;
     @Nullable
-    @JsonProperty
     private String name;
     @Nullable
-    @JsonProperty
     private String description;
+    @Nullable
+    @ValidJson
+    private String instructions;
+    @Nullable
+    private String repositoryUrl;
 }

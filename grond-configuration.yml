@@ -1,4 +1,11 @@
 services:
   catalog:
-    domain: http://localhost:8080
+    domain: localhost
+    port: 8080
     base-path: /catalog-service/api
+  postgres:
+    domain: localhost
+    port: 5432
+    database: catalog
+    username: postgres
+    password: mysecretpassword

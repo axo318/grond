@@ -1,4 +1,5 @@
 # grond
+K8s-native build system.
 
 ## Start localhost postgres in docker
 ```bash

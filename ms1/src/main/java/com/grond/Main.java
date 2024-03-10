@@ -8,7 +8,6 @@ import com.grond.common.dialog.ClientConfig;
 import java.util.List;
 
 public class Main {
-
     public static void main(String[] args) {
         PipelineClient pipelineClient = new PipelineClient(
                 ClientConfig.builder().basePath("localhost:8080/catalog-service/api").build());
@@ -27,4 +26,6 @@ public class Main {
                 .description("description")
                 .build());
     }
+
+
 }

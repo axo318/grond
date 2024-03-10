@@ -1,4 +1,4 @@
-package com.grond.catalog.entities;
+package com.grond.catalog.builds;
 
 import com.grond.catalog.api.objects.BuildStatus;
 import com.grond.catalog.pipeline.PipelineEntity;

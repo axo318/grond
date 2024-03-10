@@ -16,4 +16,4 @@ config:
 server:
   port: ${services.catalog.port}
   servlet:
-    context-path: /catalog-service/api
+    context-path: ${services.catalog.base-path}

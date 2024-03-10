@@ -12,7 +12,7 @@ CREATE TABLE pipeline (
 
 -- Create the build table
 CREATE TABLE build (
-    id UUID PRIMARY KEY,
+    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
     pipeline_id UUID NOT NULL,
     start_time TIMESTAMP NOT NULL,
     end_time TIMESTAMP,

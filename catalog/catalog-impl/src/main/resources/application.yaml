@@ -1,0 +1,19 @@
+spring:
+  config:
+    import: file:${GROND_CONFIG_PATH}
+  datasource:
+    url: jdbc:postgresql://${services.postgres.domain}:${services.postgres.port}/${services.postgres.database}
+    username: ${services.postgres.username}
+    password: ${services.postgres.password}
+    jpa:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        ddl-auto: update
+
+config:
+  catalog-service-url: http://${services.catalog.domain}:${services.catalog.port}${services.catalog.base-path}
+
+server:
+  port: ${services.catalog.port}
+  servlet:
+    context-path: ${services.catalog.base-path}

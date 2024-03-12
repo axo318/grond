@@ -10,7 +10,6 @@ docker run --name my-postgres -e POSTGRES_PASSWORD=mysecretpassword -e POSTGRES_
 docker stop my-postgres && docker rm my-postgres && docker run --name my-postgres -e POSTGRES_PASSWORD=mysecretpassword -e POSTGRES_DB=catalog -p 5432:5432 -d postgres
 ```
 
-
 ## Run configurations
 Run configurations must have an environmental variable `GROND_CONFIG_PATH` set. This variable is used by all components 
 to discover the `grond-configuration.yml` file.

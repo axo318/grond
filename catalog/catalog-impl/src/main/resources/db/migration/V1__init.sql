@@ -21,16 +21,3 @@ CREATE TABLE build (
     repository_url TEXT,
     FOREIGN KEY (pipeline_id) REFERENCES pipeline(id)
 );
-
--- Create the build_status enum type
-CREATE TYPE build_status AS ENUM (
-    'PENDING',
-    'IN_PROGRESS',
-    'SUCCEEDED',
-    'FAILED',
-    'CANCELLED'
-);
-
--- Alter build table to use build_status type
-ALTER TABLE build
-ALTER COLUMN status TYPE build_status USING status::build_status;

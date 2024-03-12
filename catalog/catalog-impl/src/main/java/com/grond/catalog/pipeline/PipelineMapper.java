@@ -2,7 +2,6 @@ package com.grond.catalog.pipeline;
 
 import com.grond.catalog.api.objects.Pipeline;
 import com.grond.catalog.api.objects.PipelineCreateRequest;
-import com.grond.catalog.api.objects.PipelineUpdateRequest;
 import java.util.UUID;
 
 public final class PipelineMapper {
@@ -18,16 +17,6 @@ public final class PipelineMapper {
 
     public static PipelineEntity toEntity(PipelineCreateRequest request) {
         return PipelineEntity.builder()
-                .name(request.getName())
-                .description(request.getDescription())
-                .instructions(request.getInstructions())
-                .repositoryUrl(request.getRepositoryUrl())
-                .build();
-    }
-
-    public static PipelineEntity toEntity(PipelineUpdateRequest request) {
-        return PipelineEntity.builder()
-                .id(UUID.fromString(request.getId()))
                 .name(request.getName())
                 .description(request.getDescription())
                 .instructions(request.getInstructions())

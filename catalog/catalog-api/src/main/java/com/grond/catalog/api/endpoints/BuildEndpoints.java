@@ -2,6 +2,7 @@ package com.grond.catalog.api.endpoints;
 
 import com.grond.catalog.api.objects.Build;
 import com.grond.catalog.api.objects.BuildCreateRequest;
+import com.grond.catalog.api.objects.BuildUpdateRequest;
 import java.util.List;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -31,7 +32,7 @@ public interface BuildEndpoints {
     Build createBuild(@RequestBody BuildCreateRequest request);
 
     @PutMapping(UPDATE_BUILD_PATH)
-    void updateBuild(@RequestBody BuildCreateRequest request);
+    void updateBuild(@RequestBody BuildUpdateRequest request);
 
     @DeleteMapping(DELETE_BUILD_PATH)
     void deleteBuild(@PathVariable String buildId);

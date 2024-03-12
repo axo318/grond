@@ -3,6 +3,7 @@ package com.grond.catalog.api.clients;
 import com.grond.catalog.api.endpoints.BuildEndpoints;
 import com.grond.catalog.api.objects.Build;
 import com.grond.catalog.api.objects.BuildCreateRequest;
+import com.grond.catalog.api.objects.BuildUpdateRequest;
 import com.grond.common.dialog.Client;
 import com.grond.common.dialog.ClientConfig;
 import java.util.List;
@@ -31,7 +32,7 @@ public class BuildClient extends Client implements BuildEndpoints {
     }
 
     @Override
-    public void updateBuild(BuildCreateRequest request) {
+    public void updateBuild(BuildUpdateRequest request) {
         put(BASE_PATH + UPDATE_BUILD_PATH, request);
     }
 

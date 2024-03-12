@@ -8,6 +8,7 @@ import com.grond.common.dialog.Controller;
 import com.grond.common.exception.ErrorCode;
 import com.grond.common.exception.ServiceException;
 import java.util.List;
+import java.util.Optional;
 import java.util.UUID;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RestController;
@@ -43,11 +44,26 @@ public class PipelineController extends Controller implements PipelineEndpoints 
 
     @Override
     public void updatePipeline(PipelineUpdateRequest request) {
-        pipelineRepository.save(PipelineMapper.toEntity(request));
+        Pipeline pipeline = getPipeline(request.getId());
+        Pipeline updatedPipeline = updatePipelineObject(pipeline, request);
+        pipelineRepository.save(PipelineMapper.toEntity(updatedPipeline));
     }
 
     @Override
     public void deletePipeline(String pipelineId) {
         pipelineRepository.deleteById(UUID.fromString(pipelineId));
+    }
+
+    private Pipeline updatePipelineObject(Pipeline previous, PipelineUpdateRequest request) {
+        return previous.toBuilder()
+                .name(Optional.ofNullable(request.getName())
+                        .orElse(previous.getName()))
+                .description(Optional.ofNullable(request.getDescription())
+                        .orElse(previous.getDescription()))
+                .instructions(Optional.ofNullable(request.getInstructions())
+                        .orElse(previous.getInstructions()))
+                .repositoryUrl(Optional.ofNullable(request.getRepositoryUrl())
+                        .orElse(previous.getRepositoryUrl()))
+                .build();
     }
 }

@@ -1,11 +1,8 @@
 package com.grond.catalog.builds;
 
-import com.grond.catalog.api.objects.BuildStatus;
 import com.grond.catalog.pipeline.PipelineEntity;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
-import jakarta.persistence.EnumType;
-import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -52,9 +49,8 @@ public class BuildEntity {
     private Date endTime;
 
     @Nonnull
-    @Enumerated(EnumType.STRING)
     @Column(name = "status", nullable = false)
-    private BuildStatus status;
+    private String status;
 
     @Nonnull
     @Column(name = "instructions", nullable = false, columnDefinition = "jsonb")

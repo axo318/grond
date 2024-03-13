@@ -1,6 +1,3 @@
--- Enable the pgcrypto extension for UUID generation
-CREATE EXTENSION IF NOT EXISTS "pgcrypto";
-
 -- Create the pipeline table
 CREATE TABLE pipeline (
     id UUID PRIMARY KEY DEFAULT gen_random_uuid(),

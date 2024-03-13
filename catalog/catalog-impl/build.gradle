@@ -20,6 +20,7 @@ dependencies {
 	implementation 'org.postgresql:postgresql:42.7.2'
 
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	testImplementation 'org.testcontainers:postgresql:1.19.7'
 }
 
 tasks.named('test') {

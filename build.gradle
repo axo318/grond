@@ -15,6 +15,11 @@ allprojects {
         compileOnly 'org.projectlombok:lombok:1.18.28'
         annotationProcessor 'org.projectlombok:lombok:1.18.28'
     }
+
+    test {
+        def grondConfigFile = new File(rootProject.projectDir, "grond-configuration.yml")
+        environment 'GROND_CONFIG_PATH', grondConfigFile.absolutePath
+    }
 }
 
 repositories {

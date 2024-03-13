@@ -5,11 +5,13 @@ spring:
     url: jdbc:postgresql://${services.postgres.domain}:${services.postgres.port}/${services.postgres.database}
     username: ${services.postgres.username}
     password: ${services.postgres.password}
-    jpa:
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
       hibernate:
-        show-sql: true
+        show_sql: true
         dialect: org.hibernate.dialect.PostgreSQLDialect
-        ddl-auto: update
 
 config:
   catalog-service-url: http://${services.catalog.domain}:${services.catalog.port}${services.catalog.base-path}

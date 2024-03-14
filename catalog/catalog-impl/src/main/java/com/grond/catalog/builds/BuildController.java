@@ -1,6 +1,5 @@
 package com.grond.catalog.builds;
 
-
 import com.grond.catalog.api.endpoints.BuildEndpoints;
 import com.grond.catalog.api.objects.Build;
 import com.grond.catalog.api.objects.BuildCreateRequest;
@@ -25,16 +24,15 @@ public class BuildController extends Controller implements BuildEndpoints {
 
     @Override
     public Build getBuild(String buildId) {
-        return buildRepository.findById(UUID.fromString(buildId))
+        return buildRepository
+                .findById(UUID.fromString(buildId))
                 .map(BuildMapper::toObject)
                 .orElseThrow(() -> new ServiceException("Build not found", ErrorCode.NOT_FOUND));
     }
 
     @Override
     public List<Build> getBuilds() {
-        return buildRepository.findAll().stream()
-                .map(BuildMapper::toObject)
-                .toList();
+        return buildRepository.findAll().stream().map(BuildMapper::toObject).toList();
     }
 
     @Override

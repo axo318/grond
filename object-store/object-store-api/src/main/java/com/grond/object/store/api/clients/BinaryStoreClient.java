@@ -11,8 +11,8 @@ public class BinaryStoreClient extends Client implements BinaryStoreEndpoints {
     }
 
     @Override
-    public BinaryKeyValue getBinaryKeyValue(String id) {
-        return get(BASE_PATH + GET_BINARY_PATH, BinaryKeyValue.class, id);
+    public BinaryKeyValue getBinaryKeyValue(String key) {
+        return get(BASE_PATH + GET_BINARY_PATH, BinaryKeyValue.class, key);
     }
 
     @Override
@@ -21,12 +21,12 @@ public class BinaryStoreClient extends Client implements BinaryStoreEndpoints {
     }
 
     @Override
-    public BinaryKeyValue appendBinaryKeyValue(BinaryKeyValue request) {
-        return post(BASE_PATH + APPEND_BINARY_PATH, request, BinaryKeyValue.class);
+    public void appendBinaryKeyValue(BinaryKeyValue request) {
+        post(BASE_PATH + APPEND_BINARY_PATH, request, BinaryKeyValue.class);
     }
 
     @Override
-    public void deleteBinaryKeyValue(String id) {
-        delete(BASE_PATH + DELETE_BINARY_PATH, id);
+    public void deleteBinaryKeyValue(String key) {
+        delete(BASE_PATH + DELETE_BINARY_PATH, key);
     }
 }

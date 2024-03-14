@@ -3,6 +3,10 @@ services:
     domain: localhost
     port: 8080
     base-path: /catalog-service/api
+  object-store:
+    domain: localhost
+    port: 8081
+    base-path: /object-store/api
   postgres:
     domain: localhost
     port: 5432

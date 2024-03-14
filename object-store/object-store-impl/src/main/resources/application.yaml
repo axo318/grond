@@ -1,0 +1,8 @@
+spring:
+  config:
+    import: file:${GROND_CONFIG_PATH}
+
+server:
+  port: ${services.object-store.port}
+  servlet:
+    context-path: ${services.object-store.base-path}

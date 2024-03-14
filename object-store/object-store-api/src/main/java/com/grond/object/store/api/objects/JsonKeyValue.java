@@ -1,12 +1,12 @@
 package com.grond.object.store.api.objects;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.databind.JsonNode;
 import javax.annotation.Nonnull;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import netscape.javascript.JSObject;
 
 @Data
 @Builder(toBuilder = true)
@@ -16,7 +16,7 @@ import netscape.javascript.JSObject;
 public class JsonKeyValue {
     @Nonnull
     private String key;
-    @Nonnull
-    private JSObject value;
-}
 
+    @Nonnull
+    private JsonNode value;
+}

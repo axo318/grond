@@ -11,8 +11,8 @@ public class JsonStoreClient extends Client implements JsonStoreEndpoints {
     }
 
     @Override
-    public JsonKeyValue getJSONKeyValue(String id) {
-        return get(BASE_PATH + GET_JSON_PATH, JsonKeyValue.class, id);
+    public JsonKeyValue getJSONKeyValue(String key) {
+        return get(BASE_PATH + GET_JSON_PATH, JsonKeyValue.class, key);
     }
 
     @Override
@@ -21,8 +21,7 @@ public class JsonStoreClient extends Client implements JsonStoreEndpoints {
     }
 
     @Override
-    public void deleteJSONKeyValue(String id) {
-        delete(BASE_PATH + DELETE_JSON_PATH, id);
-
+    public void deleteJSONKeyValue(String key) {
+        delete(BASE_PATH + DELETE_JSON_PATH, key);
     }
 }

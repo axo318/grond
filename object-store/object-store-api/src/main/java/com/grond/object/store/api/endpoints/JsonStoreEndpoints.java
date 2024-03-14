@@ -11,16 +11,16 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping(JsonStoreEndpoints.BASE_PATH)
 public interface JsonStoreEndpoints {
     String BASE_PATH = "/v1/json-store";
-    String GET_JSON_PATH = "/{id}";
+    String GET_JSON_PATH = "/{key}";
     String CREATE_JSON_PATH = "";
-    String DELETE_JSON_PATH = "/{id}";
+    String DELETE_JSON_PATH = "/{key}";
 
     @GetMapping(JsonStoreEndpoints.GET_JSON_PATH)
-    JsonKeyValue getJSONKeyValue(@PathVariable String id);
+    JsonKeyValue getJSONKeyValue(@PathVariable String key);
 
     @PostMapping(JsonStoreEndpoints.CREATE_JSON_PATH)
     JsonKeyValue createJSONKeyValue(@RequestBody JsonKeyValue request);
 
     @DeleteMapping(JsonStoreEndpoints.DELETE_JSON_PATH)
-    void deleteJSONKeyValue(@PathVariable String id);
+    void deleteJSONKeyValue(@PathVariable String key);
 }

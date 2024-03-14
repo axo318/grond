@@ -1,5 +1,11 @@
-# grond
+# Grond 🐺
 K8s-native build system.
+
+## Setup Java Formatting
+- Install the Intellij [palantir-java-format](https://plugins.jetbrains.com/plugin/13180-palantir-java-format) plugin
+- The plugin will be disabled by default on new projects, but if using the plugin, it will be recommended in IntelliJ, and automatically configured.
+- To manually enable it in the current project, go to File→Settings...→palantir-java-format Settings (or IntelliJ IDEA→Preferences...→Other Settings→palantir-java-format Settings on macOS) and check the Enable palantir-java-format checkbox.
+
 
 ## Run catalog
 ### Start postgres db in docker
@@ -10,6 +16,7 @@ docker run --name my-postgres -e POSTGRES_PASSWORD=mysecretpassword -e POSTGRES_
 ```bash
 docker stop my-postgres && docker rm my-postgres && docker run --name my-postgres -e POSTGRES_PASSWORD=mysecretpassword -e POSTGRES_DB=catalog -p 5432:5432 -d postgres
 ```
+
 
 ## Run configurations
 Run configurations must have an environmental variable `GROND_CONFIG_PATH` set. This variable is used by all components 

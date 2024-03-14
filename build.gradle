@@ -1,10 +1,23 @@
-allprojects {
-    apply plugin: 'java-library'
+buildscript {
     repositories {
         mavenCentral()
     }
+    dependencies {
+        classpath 'com.palantir.javaformat:gradle-palantir-java-format:2.40.0'
+    }
+}
+
+allprojects {
     group 'com.grond'
     version rootProject.version
+
+    apply plugin: 'java-library'
+    apply plugin: 'com.palantir.java-format'
+
+    repositories {
+        mavenCentral()
+    }
+
     dependencies {
         implementation 'com.google.code.findbugs:jsr305:3.0.2'
         implementation 'com.fasterxml.jackson.core:jackson-core:2.15.3'
@@ -15,17 +28,4 @@ allprojects {
         compileOnly 'org.projectlombok:lombok:1.18.28'
         annotationProcessor 'org.projectlombok:lombok:1.18.28'
     }
-
-    test {
-        def grondConfigFile = new File(rootProject.projectDir, "grond-configuration.yml")
-        environment 'GROND_CONFIG_PATH', grondConfigFile.absolutePath
-    }
-}
-
-repositories {
-    mavenCentral()
-}
-
-dependencies {
-    testImplementation 'junit:junit:4.13.1'
 }

@@ -1,4 +1,4 @@
-package com.grond.object.store.json_stores;
+package com.grond.object.store.jsonstore;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;

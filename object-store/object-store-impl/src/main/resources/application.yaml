@@ -2,11 +2,10 @@ spring:
   config:
     import: file:${GROND_CONFIG_PATH}
   data:
-    redis:
-      repositories:
-        enabled: true
+    mongodb:
       host: localhost
-      port: 6379
+      port: 27017
+      auto-index-creation: true
 
 server:
   port: ${services.object-store.port}

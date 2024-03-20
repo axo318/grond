@@ -1,3 +1,5 @@
 package com.grond.object.store.jsonstore;
 
-public class JsonStoreRepository {}
+import org.springframework.data.mongodb.repository.MongoRepository;
+
+public interface JsonStoreRepository extends MongoRepository<JsonStore, String> {}

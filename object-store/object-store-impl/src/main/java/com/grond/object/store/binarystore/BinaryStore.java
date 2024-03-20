@@ -7,14 +7,14 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.springframework.data.annotation.Id;
-import org.springframework.data.redis.core.RedisHash;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-@RedisHash("BinaryStore")
+@Document("BinaryStore")
 public class BinaryStore implements Serializable {
     @Id
     private String key;

@@ -2,10 +2,10 @@ package com.grond.object.store.api.clients;
 
 import com.grond.common.dialog.Client;
 import com.grond.common.dialog.ClientConfig;
-import com.grond.object.store.api.endpoints.JsonDocumentEndpoints;
+import com.grond.object.store.api.endpoints.JsonStoreEndpoints;
 import com.grond.object.store.api.objects.JsonKeyValue;
 
-public class JsonStoreClient extends Client implements JsonDocumentEndpoints {
+public class JsonStoreClient extends Client implements JsonStoreEndpoints {
     public JsonStoreClient(ClientConfig config) {
         super(config);
     }

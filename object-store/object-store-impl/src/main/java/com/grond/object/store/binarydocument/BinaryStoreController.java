@@ -3,17 +3,17 @@ package com.grond.object.store.binarydocument;
 import com.grond.common.dialog.Controller;
 import com.grond.common.exception.ErrorCode;
 import com.grond.common.exception.ServiceException;
-import com.grond.object.store.api.endpoints.BinaryDocumentEndpoints;
+import com.grond.object.store.api.endpoints.BinaryStoreEndpoints;
 import com.grond.object.store.api.objects.BinaryKeyValue;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class BinaryDocumentController extends Controller implements BinaryDocumentEndpoints {
+public class BinaryStoreController extends Controller implements BinaryStoreEndpoints {
     private final BinaryDocumentRepository binaryDocumentRepository;
 
     @Autowired
-    public BinaryDocumentController(BinaryDocumentRepository binaryDocumentRepository) {
+    public BinaryStoreController(BinaryDocumentRepository binaryDocumentRepository) {
         this.binaryDocumentRepository = binaryDocumentRepository;
     }
 

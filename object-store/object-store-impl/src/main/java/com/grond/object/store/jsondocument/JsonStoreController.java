@@ -3,17 +3,17 @@ package com.grond.object.store.jsondocument;
 import com.grond.common.dialog.Controller;
 import com.grond.common.exception.ErrorCode;
 import com.grond.common.exception.ServiceException;
-import com.grond.object.store.api.endpoints.JsonDocumentEndpoints;
+import com.grond.object.store.api.endpoints.JsonStoreEndpoints;
 import com.grond.object.store.api.objects.JsonKeyValue;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class JsonDocumentController extends Controller implements JsonDocumentEndpoints {
+public class JsonStoreController extends Controller implements JsonStoreEndpoints {
     private final JsonDocumentRepository jsonDocumentRepository;
 
     @Autowired
-    public JsonDocumentController(JsonDocumentRepository jsonDocumentRepository) {
+    public JsonStoreController(JsonDocumentRepository jsonDocumentRepository) {
         this.jsonDocumentRepository = jsonDocumentRepository;
     }
 

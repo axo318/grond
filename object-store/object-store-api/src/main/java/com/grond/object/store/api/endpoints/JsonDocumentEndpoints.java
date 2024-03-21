@@ -8,19 +8,19 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-@RequestMapping(JsonStoreEndpoints.BASE_PATH)
-public interface JsonStoreEndpoints {
+@RequestMapping(JsonDocumentEndpoints.BASE_PATH)
+public interface JsonDocumentEndpoints {
     String BASE_PATH = "/v1/json-store";
     String GET_JSON_PATH = "/{key}";
     String CREATE_JSON_PATH = "";
     String DELETE_JSON_PATH = "/{key}";
 
-    @GetMapping(JsonStoreEndpoints.GET_JSON_PATH)
+    @GetMapping(JsonDocumentEndpoints.GET_JSON_PATH)
     JsonKeyValue getJSONKeyValue(@PathVariable String key);
 
-    @PostMapping(JsonStoreEndpoints.CREATE_JSON_PATH)
+    @PostMapping(JsonDocumentEndpoints.CREATE_JSON_PATH)
     JsonKeyValue createJSONKeyValue(@RequestBody JsonKeyValue request);
 
-    @DeleteMapping(JsonStoreEndpoints.DELETE_JSON_PATH)
+    @DeleteMapping(JsonDocumentEndpoints.DELETE_JSON_PATH)
     void deleteJSONKeyValue(@PathVariable String key);
 }

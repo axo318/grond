@@ -13,3 +13,7 @@ services:
     database: catalog
     username: postgres
     password: mysecretpassword
+  mongodb:
+    host: localhost
+    port: 27017
+    auto-index-creation: true

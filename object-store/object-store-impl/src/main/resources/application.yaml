@@ -3,9 +3,9 @@ spring:
     import: file:${GROND_CONFIG_PATH}
   data:
     mongodb:
-      host: localhost
-      port: 27017
-      auto-index-creation: true
+      host: ${services.mongodb.host}
+      port: ${services.mongodb.port}
+      auto-index-creation: ${services.mongodb.auto-index-creation}
 
 server:
   port: ${services.object-store.port}

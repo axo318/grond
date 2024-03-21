@@ -1,5 +1,6 @@
-package com.grond.object.store.binarystore;
+package com.grond.object.store.jsondocument;
 
+import com.fasterxml.jackson.databind.JsonNode;
 import java.io.Serializable;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -14,10 +15,10 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-@Document("BinaryStore")
-public class BinaryStore implements Serializable {
+@Document("JsonDocument")
+public class JsonDocument implements Serializable {
     @Id
     private String key;
 
-    private String value;
+    private JsonNode value;
 }

@@ -2,11 +2,11 @@ package com.grond.object.store.api.clients;
 
 import com.grond.common.dialog.Client;
 import com.grond.common.dialog.ClientConfig;
-import com.grond.object.store.api.endpoints.BinaryStoreEndpoints;
+import com.grond.object.store.api.endpoints.BinaryDocumentEndpoints;
 import com.grond.object.store.api.objects.BinaryKeyValue;
 
-public class BinaryStoreClient extends Client implements BinaryStoreEndpoints {
-    public BinaryStoreClient(ClientConfig config) {
+public class BinaryDocumentClient extends Client implements BinaryDocumentEndpoints {
+    public BinaryDocumentClient(ClientConfig config) {
         super(config);
     }
 

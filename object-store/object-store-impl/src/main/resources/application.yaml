@@ -1,6 +1,11 @@
 spring:
   config:
     import: file:${GROND_CONFIG_PATH}
+  data:
+    mongodb:
+      host: ${services.mongodb.host}
+      port: ${services.mongodb.port}
+      auto-index-creation: ${services.mongodb.auto-index-creation}
 
 server:
   port: ${services.object-store.port}
